@@ -16,7 +16,7 @@
 git clone https://github.com/HadjiMedia/Cpmnuker
 ```
 ```
-cd CPMNuker
+cd CPMnuker
 ```
 ```
 pip install -r requirements.txt
