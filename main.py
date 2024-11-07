@@ -80,7 +80,7 @@ def load_key_data(cpm):
     console.print("[bold][red]========[/red][ ACCESS KEY DETAILS ][red]========[/red][/bold]")
     console.print(f"[bold green]Access Key [/bold green]: { data.get('access_key') }.")
     console.print(f"[bold green]Telegram ID[/bold green]: { data.get('telegram_id') }.")
-    console.print(f"[bold green]Credits    [/bold green]: { (data.get('coins') if not data.get('is_unlimited') else 'Unlimited') }.", end="\n\n")
+    console.print(f"[bold green]Credits    [/bold green]: Unlimited \n\n")
 
 def prompt_valid_value(content, tag, password=False):
     while True:
@@ -114,9 +114,7 @@ if __name__ == "__main__":
         banner(console)
         acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
-        acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=True)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
-        cpm = CPMNuker(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
@@ -125,10 +123,6 @@ if __name__ == "__main__":
                 continue
             elif login_response == 101:
                 console.print("[bold red]WRONG PASSWORD[/bold red].")
-                sleep(2)
-                continue
-            elif login_response == 103:
-                console.print("[bold red]INVALID ACCESS KEY[/bold red].")
                 sleep(2)
                 continue
             else:
