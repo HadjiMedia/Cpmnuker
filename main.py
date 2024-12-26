@@ -11,7 +11,6 @@ from rich.style import Style
 import pystyle
 from pystyle import Colors, Colorate
 
-from cpmewan import CPMEwan
 
 __CHANNEL_USERNAME__ = "SOPHIA_DEVELOPER"
 __GROUP_USERNAME__   = "Sophia_dev"
