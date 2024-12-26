@@ -141,10 +141,6 @@ if __name__ == "__main__":
                 print(Colorate.Horizontal(Colors.rainbow, 'WRONG PASSWORD.'))
                 sleep(2)
                 continue
-            elif login_response == 103:
-                print(Colorate.Horizontal(Colors.rainbow, 'INVALID ACCESS KEY.'))
-                sleep(2)
-                continue
             else:
                 print(Colorate.Horizontal(Colors.rainbow, 'TRY AGAIN.'))
                 print(Colorate.Horizontal(Colors.rainbow, '! Note: make sure you filled out the fields !.'))
