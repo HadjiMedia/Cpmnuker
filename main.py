@@ -11,9 +11,10 @@ from rich.style import Style
 import pystyle
 from pystyle import Colors, Colorate
 
+from cpmewan import CPMEwan
 
-__CHANNEL_USERNAME__ = "SOPHIA_DEVELOPER"
-__GROUP_USERNAME__   = "Sophia_dev"
+__CHANNEL_USERNAME__ = "HadjiCpm"
+__GROUP_USERNAME__   = "HadjiDiscussion"
 
 def signal_handler(sig, frame):
     print("\n Bye Bye...")
@@ -35,15 +36,23 @@ def gradient_text(text, colors):
                 colorful_text.append(char)
         colorful_text.append("\n")
     return colorful_text
+    
+    
+██╗░░██╗░█████╗░██████╗░░░░░░██╗██╗
+██║░░██║██╔══██╗██╔══██╗░░░░░██║██║
+███████║███████║██║░░██║░░░░░██║██║
+██╔══██║██╔══██║██║░░██║██╗░░██║██║
+██║░░██║██║░░██║██████╔╝╚█████╔╝██║
+╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝
 
 def banner(console):
     os.system('cls' if os.name == 'nt' else 'clear')
-    brand_name =  "  ██████  ▒█████   ██▓███   ██░ ██  ██▓ ▄▄▄ \n"
-    brand_name += "▒██    ▒ ▒██▒  ██▒▓██░  ██▒▓██░ ██▒▓██▒▒████▄ \n"
-    brand_name += "░ ▓██▄   ▒██░  ██▒▓██░ ██▓▒▒██▀▀██░▒██▒▒██  ▀█▄\n"
-    brand_name += "  ▒   ██▒▒██   ██░▒██▄█▓▒ ▒░▓█ ░██ ░██░░██▄▄▄▄██\n"
-    brand_name += "▒██████▒▒░ ████▓▒░▒██▒ ░  ░░▓█▒░██▓░██░ ▓█   ▓██▒\n"
-    brand_name += "▒ ▒▓▒ ▒ ░░ ▒░▒░▒░ ▒▓▒░ ░  ░ ▒ ░░▒░▒░▓   ▒▒   ▓▒█░ \n"
+    brand_name =  "██╗░░██╗░█████╗░██████╗░░░░░░██╗██╗\n"
+    brand_name += "██║░░██║██╔══██╗██╔══██╗░░░░░██║██║n"
+    brand_name += "███████║███████║██║░░██║░░░░░██║██║\n"
+    brand_name += "██╔══██║██╔══██║██║░░██║██╗░░██║██║\n"
+    brand_name += "██║░░██║██║░░██║██████╔╝╚█████╔╝██║\n"
+    brand_name += "╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝\n"
     colors = [
         "rgb(255,0,0)", "rgb(255,69,0)", "rgb(255,140,0)", "rgb(255,215,0)", "rgb(173,255,47)", 
         "rgb(0,255,0)", "rgb(0,255,255)", "rgb(0,191,255)", "rgb(0,0,255)", "rgb(139,0,255)",
@@ -52,7 +61,7 @@ def banner(console):
     colorful_text = gradient_text(brand_name, colors)
     console.print(colorful_text)
     print(Colorate.Horizontal(Colors.rainbow, '==================================================================='))
-    print(Colorate.Horizontal(Colors.rainbow, '\t       𝐒𝐎𝐏𝐇𝐈𝐀𝐃𝐄𝐕 𝐓𝐎𝐎𝐋: 𝐈𝐅 𝐘𝐎𝐔 𝐖𝐀𝐍𝐓 𝐓𝐎 𝐀𝐕𝐀𝐈𝐋 𝐉𝐔𝐒𝐓 𝐏𝐌 𝐒𝐎𝐏𝐇𝐈𝐀'))
+    print(Colorate.Horizontal(Colors.rainbow, '\t       𝐇𝐀𝐃𝐉𝐈 𝐓𝐎𝐎𝐋: 𝐈𝐅 𝐘𝐎𝐔 𝐖𝐀𝐍𝐓 𝐓𝐎 𝐀𝐕𝐀𝐈𝐋 𝐉𝐔𝐒𝐓 𝐏𝐌 𝐇𝐀𝐃𝐉𝐈'))
     print(Colorate.Horizontal(Colors.rainbow, '    𝐊𝐈𝐍𝐆 𝐑𝐀𝐍𝐊 𝐀𝐍𝐃 𝐔𝐍𝐋𝐎𝐂𝐊 𝐅𝐎𝐑 𝐎𝐍𝐋𝐘 𝟏𝟎𝟎 𝐏𝐈𝐒𝐎𝐒 𝐋𝐄𝐆𝐈𝐓 𝐒𝐄𝐋𝐋𝐄𝐑 𝐇𝐄𝐑𝐄 𝐏𝐌'))
     print(Colorate.Horizontal(Colors.rainbow, f' ‌           𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL_USERNAME__} 𝐎𝐫 @{__GROUP_USERNAME__}'))
     print(Colorate.Horizontal(Colors.rainbow, '==================================================================='))
@@ -87,7 +96,7 @@ def load_key_data(cpm):
     
     print(Colorate.Horizontal(Colors.rainbow, '=============[ OWNER ]==============='))
     
-    print(Colorate.Horizontal(Colors.rainbow, f'    OWNER: SOPHIA_DEVELOPER')) 
+    print(Colorate.Horizontal(Colors.rainbow, f'    OWNER: @HADJIMEDIA')) 
     
     print(Colorate.Horizontal(Colors.rainbow, '====================================='))
         
@@ -131,6 +140,7 @@ if __name__ == "__main__":
         banner(console)
         acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
+        console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
