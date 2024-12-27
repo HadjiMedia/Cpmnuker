@@ -11,8 +11,6 @@ from rich.style import Style
 import pystyle
 from pystyle import Colors, Colorate
 
-from cpmewan import CPMEwan
-
 __CHANNEL_USERNAME__ = "HadjiCpm"
 __GROUP_USERNAME__   = "HadjiDiscussion"
 
