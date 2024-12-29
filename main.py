@@ -117,26 +117,7 @@ if __name__ == "__main__":
         acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
-        login_response = login(acc_email, acc_password)
-        if login_response != 0:
-            if login_response == 100:
-                console.print("[bold red]ACCOUNT NOT FOUND[/bold red].")
-                sleep(2)
-                continue
-            elif login_response == 101:
-                console.print("[bold red]WRONG PASSWORD[/bold red].")
-                sleep(2)
-                continue
-            else:
-                console.print("[bold red]TRY AGAIN[/bold red].")
-                console.print("[bold yellow]! Note[/bold yellow]: make sure you filled out the fields !.")
-                sleep(2)
-                continue
-        else:
-            console.print("[bold green]SUCCESSFUL[/bold green].")
-            sleep(2)
         while True:
-            banner(console)
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
