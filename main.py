@@ -570,11 +570,9 @@ def serper(cit, datanya):
 
 
 def get_userInfo():
-    url = f"{mode_server}/get_UserInfo"
 
     data = {
         "user": Your_Data['username'],
-        "access_token": Your_Data['access_token']
     }
 
     try:
