@@ -402,7 +402,7 @@ def heder():
             data_client=f"""
   username   : {Your_Data['username']}
   role       : {Your_Data['role']}
-  money      : {Your_Data['money']}
+  money      : 999999999999999999
   expire_at  : {Your_Data['expire_at']}
   last login : {Your_Data['last_login_date']}"""
             if 'email' in Your_Data:
