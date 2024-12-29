@@ -211,9 +211,9 @@ def generate(namax):
     # proses memecah huruf di nama
     data = {
         "huruf": "",
-        "kodewarna": [255, 0, 0],
+        "Hadji": [255, 0, 0],
         "mode": 1,
-        "kodewarnaCPM": ""
+        "HadjiCPM": ""
     }
     while True:
         while True:
@@ -222,22 +222,22 @@ def generate(namax):
                 warnasekarang = tanya
                 break
         if tanya == "merah":
-            data["kodewarna"] = [255, 0, 0]
+            data["Hadji"] = [255, 0, 0]
             break
         elif tanya == "kuning":
-            data["kodewarna"] = [230, 245, 66]
+            data["Hadji"] = [230, 245, 66]
             break
         elif tanya == "hijau":
-            data["kodewarna"] = [0, 255, 0]
+            data["Hadji"] = [0, 255, 0]
             break
         elif tanya == "biru":
-            data["kodewarna"] = [0, 0, 255]
+            data["Hadji"] = [0, 0, 255]
             break
         elif tanya == "ungu":
-            data["kodewarna"] = [150, 66, 245]
+            data["Hadji"] = [150, 66, 245]
             break
         elif tanya == "pink":
-            data["kodewarna"] = [245, 66, 215]
+            data["Hadji"] = [245, 66, 215]
             break
         else:
             print("Harus sesuai pilihan warna ..!")
@@ -247,63 +247,63 @@ def generate(namax):
             # print(f"\nmode sekarang : {data['mode']}")
             tambah = 45
             if data["mode"] == 1:
-                if data["kodewarna"][1]+tambah <= 255:
-                    data["kodewarna"][1] += tambah
+                if data["Hadji"][1]+tambah <= 255:
+                    data["Hadji"][1] += tambah
                     break
                 else:
                     data["mode"] += 1
-                    data["kodewarna"] = [255, 255, 0]
+                    data["Hadji"] = [255, 255, 0]
             elif data["mode"] == 2:
-                if data["kodewarna"][0]-tambah >= 0:
-                    data["kodewarna"][0] -= tambah
+                if data["Hadji"][0]-tambah >= 0:
+                    data["Hadji"][0] -= tambah
                     break
                 else:
                     data["mode"] += 1
-                    data["kodewarna"] = [0, 255, 0]
+                    data["Hadji"] = [0, 255, 0]
             elif data["mode"] == 3:
-                if data["kodewarna"][2]+tambah >= 255:
-                    data["kodewarna"][2] += tambah
+                if data["Hadji"][2]+tambah >= 255:
+                    data["Hadji"][2] += tambah
                     break
                 else:
                     data["mode"] += 1
-                    data["kodewarna"] = [0, 255, 255]
+                    data["Hadji"] = [0, 255, 255]
             elif data["mode"] == 4:
-                if data["kodewarna"][1]-tambah >= 0:
-                    data["kodewarna"][1] -= tambah
+                if data["Hadji"][1]-tambah >= 0:
+                    data["Hadji"][1] -= tambah
                     break
                 else:
                     data["mode"] += 1
-                    data["kodewarna"] = [0, 0, 255]
+                    data["Hadji"] = [0, 0, 255]
             elif data["mode"] == 5:
-                if data["kodewarna"][0]+tambah >= 255:
-                    data["kodewarna"][0] += tambah
+                if data["Hadji"][0]+tambah >= 255:
+                    data["Hadji"][0] += tambah
                     break
                 else:
                     data["mode"] += 1
-                    data["kodewarna"] = [255, 0, 255]
+                    data["Hadji"] = [255, 0, 255]
             elif data["mode"] == 6:
-                if data["kodewarna"][2]-tambah >= 255:
-                    data["kodewarna"][2] -= tambah
+                if data["Hadji"][2]-tambah >= 255:
+                    data["Hadji"][2] -= tambah
                     break
                 else:
                     data["mode"] = 1
-                    data["kodewarna"] = [255, 0, 0]
-        # print(f"{huruf} {data['kodewarna']}")
+                    data["Hadji"] = [255, 0, 0]
+        # print(f"{huruf} {data['Hadji']}")
         gabungwarna += color(huruf,
-                             fore=(data["kodewarna"][0],
-                                   data["kodewarna"][1],
-                                   data["kodewarna"][2]),
+                             fore=(data["Hadji"][0],
+                                   data["Hadji"][1],
+                                   data["Hadji"][2]),
                              back=(0, 0, 0))
         kodas = []
         for t in range(3):
-            clrcode = hex(data["kodewarna"][t])[2::]
+            clrcode = hex(data["Hadji"][t])[2::]
             if len(clrcode) == 1:
                 clrcode += "0"
             kodas.append(clrcode)
-        data["kodewarnaCPM"] += f"[{kodas[0]}{kodas[1]}{kodas[2]}]{huruf}"
-    # print(f"hasil\t:  {disp(data['kodewarnaCPM'])}")
-    # print(f"kode\t:  {data['kodewarnaCPM']}")
-    return data["kodewarnaCPM"]
+        data["HadjiCPM"] += f"[{kodas[0]}{kodas[1]}{kodas[2]}]{huruf}"
+    # print(f"hasil\t:  {disp(data['HadjiCPM'])}")
+    # print(f"kode\t:  {data['HadjiCPM']}")
+    return data["HadjiCPM"]
 def refresh_x():
     import inspect
     kucing_garong = inspect.getfile(inspect.currentframe())
@@ -402,7 +402,7 @@ def heder():
             data_client=f"""
   username   : {Your_Data['username']}
   role       : {Your_Data['role']}
-  money      : 999999999999999999
+  money      : 99999999999999
   expire_at  : {Your_Data['expire_at']}
   last login : {Your_Data['last_login_date']}"""
             if 'email' in Your_Data:
@@ -515,14 +515,13 @@ def send_login_data(uname, upass):
         }
 
 def serper(cit, datanya):
-    # Cek apakah token masih ada
-    if not Your_Data.get('access_token'):
+
         return {"status": False, "message": "Silakan login terlebih dahulu"}
 
     url = f"{mode_server}/app_endpoint"
 
     data = {
-        "access_token": Your_Data['access_token'],
+
         "username": Your_Data['username'],
         "item": {
             "name": cit
