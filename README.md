@@ -13,10 +13,10 @@
 ## Installation
 [don't know how to install python ?](#install-python)
 ```
-git clone https://github.com/HadjiMedia/Cpmnuker
+git clone https://github.com/HadjiMedia/Cpmnuker.git
 ```
 ```
-cd CPMnuker
+cd Cpmnuker
 ```
 ```
 pip install -r requirements.txt
