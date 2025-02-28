@@ -1,3 +1,4 @@
+import asyncio
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 
@@ -8,15 +9,16 @@ async def start(update: Update, context: CallbackContext):
 
 async def main():
     app = Application.builder().token(TOKEN).build()
-
     app.add_handler(CommandHandler("start", start))
-
+    
     print("Bot is running...")
     await app.run_polling()
 
 if __name__ == "__main__":
-    import asyncio
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
 
-if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())  # Use this instead of asyncio.run(main())
+    loop.run_until_complete(main())  # Use this instead of asyncio.run()
